@@ -63,7 +63,6 @@ public final class SparkALSByStreaming {
 				StringDecoder.class, StringDecoder.class, kafkaParams, topicsSet);
 
 		JavaDStream<String> lines = messages.map(new Function<Tuple2<String, String>, String>() {
-			@Override
 			public String call(Tuple2<String, String> tuple2) {
 				return tuple2._2();
 			}
@@ -80,7 +79,6 @@ public final class SparkALSByStreaming {
 		// 进行流推荐计算
 		ratingsStream.foreachRDD(new Function<JavaRDD<Rating>, Void>() {
 
-			@Override
 			public Void call(JavaRDD<Rating> ratings) throws Exception {
 				// TODO 获取到原始的数据集
 				SparkContext sc = ratings.context();

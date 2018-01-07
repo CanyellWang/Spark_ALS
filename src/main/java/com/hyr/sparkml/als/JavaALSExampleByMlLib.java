@@ -75,7 +75,6 @@ public class JavaALSExampleByMlLib {
 		JavaPairRDD<Integer, Tuple2<Integer, Double>> fromJavaRDD = JavaPairRDD.fromJavaRDD(ratesAndPreds.map(
 				new Function<Tuple2<Tuple2<Integer, Integer>, Tuple2<Double, Double>>, Tuple2<Integer, Tuple2<Integer, Double>>>() {
 
-					@Override
 					public Tuple2<Integer, Tuple2<Integer, Double>> call(
 							Tuple2<Tuple2<Integer, Integer>, Tuple2<Double, Double>> t) throws Exception {
 						// TODO Auto-generated method stub
